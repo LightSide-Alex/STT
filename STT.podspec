@@ -20,13 +20,19 @@ This project is inspaired by MvvmCross [MvvmCross](https://github.com/MvvmCross/
   s.platform     = :ios, "11.0"
 
   s.source       = { :git => "https://github.com/Standret/STT.git", :tag => "#{s.version}" }
-  s.source_files  = "STT/Bindings/*.swift", "STT/Extensions/*.swift", "STT/Components/*.swift", "STT/Components/Core/*.swift", "STT/Components/View/*.swift"
+  s.source_files  = "STT/**/*.swift", "STT/Extensions/*.swift", "STT/Components/*.swift", "STT/Components/Core/*.swift", "STT/Components/View/*.swift"
 
   # A collection of usefull extensions for UIKit and Foundation 
   s.subspec 'Extensions' do |sp|
     sp.s.source_files = "STT/Extensions/*.swift"
   end
 
+  # A collection of usefull extensions for UIKit and Foundation
+  s.subspec 'Validation' do |sp|
+    sp.s.source_files = "STT/Validation/*.swift"
+  end
+
+  # A collection of usefull bindings
   s.subspec 'Binding' do |sp|
     sp.s.source_files = "STT/Bindings/*.swift"
     sp.dependency "RxSwift", "~> 4.0"

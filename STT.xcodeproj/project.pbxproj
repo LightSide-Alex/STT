@@ -285,6 +285,8 @@
 		50106A1F2237E49E002C634A /* STT */ = {
 			isa = PBXGroup;
 			children = (
+				7D9B37D72258CA8100AD41BD /* KeyValueStorage */,
+				7D9B37D62258C9F000AD41BD /* Validation */,
 				5016C3A7223927F40080BD63 /* Extensions */,
 				5016C3262238FE200080BD63 /* Components */,
 				5016C3082238EF770080BD63 /* Bindings */,
@@ -451,10 +453,6 @@
 		50F0CAA722394A540034E1AA /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				50F0CAB122394AA90034E1AA /* SttValidationResult.swift */,
-				50F0CAB222394AA90034E1AA /* SttValidator.swift */,
-				50F0CAB422394AA90034E1AA /* SttValidatorBuilder.swift */,
-				50F0CAB322394AA90034E1AA /* SttValidatorType.swift */,
 			);
 			name = Validation;
 			sourceTree = "<group>";
@@ -568,6 +566,24 @@
 				5016C38922391A8A0080BD63 /* SttTableViewSourceWithSection.swift */,
 			);
 			name = Sources;
+			sourceTree = "<group>";
+		};
+		7D9B37D62258C9F000AD41BD /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				50F0CAB122394AA90034E1AA /* SttValidationResult.swift */,
+				50F0CAB222394AA90034E1AA /* SttValidator.swift */,
+				50F0CAB422394AA90034E1AA /* SttValidatorBuilder.swift */,
+				50F0CAB322394AA90034E1AA /* SttValidatorType.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		7D9B37D72258CA8100AD41BD /* KeyValueStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KeyValueStorage;
 			sourceTree = "<group>";
 		};
 		C5B1E0B7486AC9C34A8BF02E /* Pods */ = {
