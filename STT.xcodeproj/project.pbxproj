@@ -285,6 +285,7 @@
 		50106A1F2237E49E002C634A /* STT */ = {
 			isa = PBXGroup;
 			children = (
+				7D9B37D82258CB8500AD41BD /* HttpService */,
 				7D9B37D72258CA8100AD41BD /* KeyValueStorage */,
 				7D9B37D62258C9F000AD41BD /* Validation */,
 				5016C3A7223927F40080BD63 /* Extensions */,
@@ -341,11 +342,8 @@
 				50F0CABA22394AE60034E1AA /* Converter */,
 				50F0CAB922394AB70034E1AA /* Command */,
 				50F0CAB022394A8A0034E1AA /* Errors */,
-				50F0CAA722394A540034E1AA /* Validation */,
 				50F0CAA2223949C20034E1AA /* Presenter */,
 				50F0CAA0223949A80034E1AA /* Router */,
-				50F0CA9F223949990034E1AA /* Networking */,
-				50F0CA9D2239496B0034E1AA /* KeyValueStorage */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -412,25 +410,6 @@
 			name = NSExtensions;
 			sourceTree = "<group>";
 		};
-		50F0CA9D2239496B0034E1AA /* KeyValueStorage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = KeyValueStorage;
-			sourceTree = "<group>";
-		};
-		50F0CA9F223949990034E1AA /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				5016C3DE22392AE80080BD63 /* SttHttpServiceType.swift */,
-				5016C3DF22392AE80080BD63 /* SttHttpService.swift */,
-				5016C3E022392AE80080BD63 /* ApiControllerType.swift */,
-				5016C3E122392AE80080BD63 /* SttNetworking.swift */,
-				5016C36C223907820080BD63 /* SttConnectivityDelegate.swift */,
-			);
-			name = Networking;
-			sourceTree = "<group>";
-		};
 		50F0CAA0223949A80034E1AA /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,13 +425,6 @@
 				5016C340223901050080BD63 /* SttPresenter.swift */,
 			);
 			name = Presenter;
-			sourceTree = "<group>";
-		};
-		50F0CAA722394A540034E1AA /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Validation;
 			sourceTree = "<group>";
 		};
 		50F0CAB022394A8A0034E1AA /* Errors */ = {
@@ -584,6 +556,18 @@
 				5016C3E822392C460080BD63 /* SttStorage.swift */,
 			);
 			path = KeyValueStorage;
+			sourceTree = "<group>";
+		};
+		7D9B37D82258CB8500AD41BD /* HttpService */ = {
+			isa = PBXGroup;
+			children = (
+				5016C3DE22392AE80080BD63 /* SttHttpServiceType.swift */,
+				5016C3DF22392AE80080BD63 /* SttHttpService.swift */,
+				5016C3E022392AE80080BD63 /* ApiControllerType.swift */,
+				5016C3E122392AE80080BD63 /* SttNetworking.swift */,
+				5016C36C223907820080BD63 /* SttConnectivityDelegate.swift */,
+			);
+			path = HttpService;
 			sourceTree = "<group>";
 		};
 		C5B1E0B7486AC9C34A8BF02E /* Pods */ = {

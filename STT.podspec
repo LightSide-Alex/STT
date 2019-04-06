@@ -24,27 +24,34 @@ This project is inspaired by MvvmCross [MvvmCross](https://github.com/MvvmCross/
 
   # A collection of usefull extensions for UIKit and Foundation 
   s.subspec 'Extensions' do |sp|
-    sp.s.source_files = "STT/Extensions/*.swift"
+    sp.source_files = "STT/Extensions/*.swift"
   end
 
   # A collection of usefull extensions for UIKit and Foundation
   s.subspec 'Validation' do |sp|
-    sp.s.source_files = "STT/Validation/*.swift"
+    sp.source_files = "STT/Validation/*.swift"
   end
 
-  # A wrapper above Keychain and UserDefault
+  # A wrapper built around Keychain and UserDefault
   s.subspec 'KeyValueStorage' do |sp|
-    sp.s.source_files = "STT/KeyValueStorage/*.swift"
+    sp.source_files = "STT/KeyValueStorage/*.swift"
+    sp.dependency "RxSwift", "~> 4.0"
+    sp.dependency "KeychainSwift", "~> 10.0"
+  end
+
+  # A wrapper built around Alomofire
+  s.subspec 'HttpService' do |sp|
+    sp.source_files = "STT/HttpService/*.swift"
+    sp.dependency "RxSwift", "~> 4.0"
+    s.dependency "Alamofire", "~> 4.7"
+    s.dependency "RxAlamofire"
   end
 
   # A collection of usefull bindings
   s.subspec 'Binding' do |sp|
-    sp.s.source_files = "STT/Bindings/*.swift"
+    sp.source_files = "STT/Bindings/*.swift"
     sp.dependency "RxSwift", "~> 4.0"
   end
 
-  s.dependency "Alamofire", "~> 4.7"
-  s.dependency "RxAlamofire"
   s.dependency "TinyConstraints"
-  s.dependency "KeychainSwift", "~> 10.0"
 end
