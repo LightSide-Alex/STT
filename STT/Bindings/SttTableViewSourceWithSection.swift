@@ -67,7 +67,7 @@ open class SttTableViewSourceWithSection<TCell: SttViewInjector, TSection: SttVi
         disposable = DisposeBag()
         subCollectionDisposeBag = DisposeBag()
         
-        collection.observableObject.subscribe(onNext: { [weak self] _ in self?.subsribeOnChange() })
+        collection.changes.subscribe(onNext: { [weak self] _ in self?.subsribeOnChange() })
             .disposed(by: disposable)
         
         subsribeOnChange()
@@ -78,7 +78,7 @@ open class SttTableViewSourceWithSection<TCell: SttViewInjector, TSection: SttVi
         
         subCollectionDisposeBag = DisposeBag()
         for index in 0..<collection.count {
-            collection[index].0.observableObject.subscribe(onNext: { [weak self] (indexes, type) in
+            collection[index].0.changes.subscribe(onNext: { [weak self] (indexes, type) in
                 if self?.maxAnimationCount ?? 0 < indexes.count {
                     self?._tableView.reloadData()
                 }

@@ -27,9 +27,7 @@
 import Foundation
 
 public enum SttBindingMode {
-    case readListener
     case readBind
     case write
-    case twoWayListener
     case twoWayBind
 }

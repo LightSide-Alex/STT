@@ -51,7 +51,7 @@ open class SttCollectionViewWithSectionSource<TCell: SttViewInjector, TSection: 
         disposable = DisposeBag()
         subCollectionDisposeBag = DisposeBag()
         
-        collection.observableObject.subscribe(onNext: { [weak self] _ in self?.subsribeOnChange() })
+        collection.changes.subscribe(onNext: { [weak self] _ in self?.subsribeOnChange() })
             .disposed(by: disposable)
         
         subsribeOnChange()
@@ -62,7 +62,7 @@ open class SttCollectionViewWithSectionSource<TCell: SttViewInjector, TSection: 
         
         subCollectionDisposeBag = DisposeBag()
         for index in 0..<collection.count {
-            collection[index].0.observableObject.subscribe(onNext: { [weak self] (indexes, type) in
+            collection[index].0.changes.subscribe(onNext: { [weak self] (indexes, type) in
                 self?._collectionView.performBatchUpdates({ [weak self] in
                     switch type {
                     case .reload:

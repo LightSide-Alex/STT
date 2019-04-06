@@ -26,6 +26,7 @@
 
 import Foundation
 
+/// An abstraction for two way bindings
 public class SttGenericTwoWayBindingContext<TViewController: AnyObject, TProperty>: SttGenericBindingContext<TViewController, TProperty> {
     
     internal var canBindSpecial: Bool { return false }
@@ -70,7 +71,7 @@ public class SttGenericTwoWayBindingContext<TViewController: AnyObject, TPropert
     
     private func bindEditing() {
         switch bindMode {
-        case .write, .twoWayListener, .twoWayBind:
+        case .write, .twoWayBind:
             bindWriting()
         default: break
         }

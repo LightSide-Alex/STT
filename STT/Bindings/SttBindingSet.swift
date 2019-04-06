@@ -159,9 +159,35 @@ public class SttBindingSet<TViewController: AnyObject> {
      
      ````
     */
+    @available(*, deprecated, message: "Use bind with closure")
     public func bind<T>(_ context: T.Type) -> SttGenericBindingContext<TViewController, T> {
         
         let set = SttGenericBindingContext<TViewController, T>(vc: parent)
+        sets.append(set)
+        return set
+    }
+    
+    /**
+     Use for abstract binding.
+     
+     - REMARK:
+     It is reccomend to use only if there are not any **specific** bindings.
+     
+     - Important:
+     TProperty is property which you expect to assign in binding closure
+     
+     - PARAMETER context: Target closure which call every time when target changes
+     
+     ### Usage Example: ###
+     ````
+     set.bind({ (view, value: Bool) in view.property = value })
+     
+     ````
+     */
+    public func bind<TProperty>(_ context: @escaping (_ vc: TViewController, _ property: TProperty) -> Void) -> SttGenericBindingContext<TViewController, TProperty> {
+
+        let set = SttGenericBindingContext<TViewController, TProperty>(vc: parent)
+        set.forProperty(context)
         sets.append(set)
         return set
     }

@@ -67,7 +67,7 @@ open class SttCollectionViewSource<T: SttViewInjector>: NSObject, UICollectionVi
         countData = collection.count
         _collectionView.reloadData()
         disposables?.dispose()
-        disposables = collection.observableObject.subscribe(onNext: { [weak self] (indexes, type) in
+        disposables = collection.changes.subscribe(onNext: { [weak self] (indexes, type) in
             if type == .reload {
                 self?.countData = collection.count
                 self?._collectionView.reloadData()

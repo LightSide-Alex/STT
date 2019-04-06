@@ -2,7 +2,7 @@
 //  SttObservableCollection.swift
 //  STT
 //
-//  Created by Piter Standret on 6/16/18.
+//  Created by Peter Standret on 6/16/18.
 //  Copyright © 2019 Peter Standret <pstandret@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,16 +27,20 @@
 import Foundation
 import RxSwift
 
+/// Represent all posible cases in application
 public enum NotifyCollectionType {
     case delete, insert, update, reload
 }
 
+/// A collection which notify subsribers about changes
 open class SttObservableCollection<T>: Collection {
     
-    private var datas = [T]()
-    private var notifyPublisher = PublishSubject<([Int], NotifyCollectionType)>()
+    private var notifyPublisher = PublishSubject<(range: [Int], type: NotifyCollectionType)>()
+    /// Observable object which notify subribers about collection's changes
+    public var changes: Observable<(range: [Int], type: NotifyCollectionType)> { return notifyPublisher }
     
-    public var observableObject: Observable<([Int], NotifyCollectionType)> { return notifyPublisher }
+    private var datas = [T]()
+    
     public var count: Int { return datas.count }
     public var capacity: Int { return datas.capacity }
     public var startIndex: Int { return datas.startIndex }

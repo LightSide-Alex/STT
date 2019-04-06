@@ -94,11 +94,6 @@ open class SttGenericBindingContext<TViewController: AnyObject, TProperty>: SttB
                     let value = self.converter != nil ? self.converter?.convert(value: $0, parametr: self.parametr) : $0
                     self.setter(self.vc, value as! TProperty)
                 }
-            case .readListener, .twoWayListener:
-                value.addListener { [unowned self] in
-                    let value = self.converter != nil ? self.converter?.convert(value: $0, parametr: self.parametr) : $0
-                    self.setter(self.vc, value as! TProperty)
-                }
             default:
                 fatalError("incorrect type")
             }
@@ -224,12 +219,6 @@ public func => <TViewController, TProperty>(left: SttGenericBindingContext<TView
 }
 
 @discardableResult
-public func <- <TViewController, TProperty, TTarget>(left: SttGenericBindingContext<TViewController, TProperty>,
-                                              right: Dynamic<TTarget>) -> SttGenericBindingContext<TViewController, TProperty> {
-    return left.to(right).withMode(.readListener)
-}
-
-@discardableResult
 public func <<- <TViewController, TProperty, TTarget>(left: SttGenericBindingContext<TViewController, TProperty>,
                                                right: Dynamic<TTarget>) -> SttGenericBindingContext<TViewController, TProperty> {
     return left.to(right).withMode(.readBind)
@@ -245,12 +234,6 @@ public func ->> <TViewController, TProperty, TTarget>(left: SttGenericBindingCon
 public func ->> <TViewController, TProperty>(left: SttGenericBindingContext<TViewController, TProperty>,
                                                       right: SttCommandType) -> SttGenericBindingContext<TViewController, TProperty> {
     return left.to(right)
-}
-
-@discardableResult
-public func <->> <TViewController, TProperty, TTarget>(left: SttGenericBindingContext<TViewController, TProperty>,
-                                                      right: Dynamic<TTarget>) -> SttGenericBindingContext<TViewController, TProperty> {
-    return left.to(right).withMode(.twoWayListener)
 }
 
 @discardableResult

@@ -26,7 +26,6 @@
 
 import Foundation
 import UIKit
-import TinyConstraints
 
 public extension UIView {
     
@@ -80,7 +79,23 @@ public extension UIView {
         indicator.color = color
         
         self.addSubview(indicator)
-        indicator.centerInSuperview()
+        
+        self.addConstraints([
+            NSLayoutConstraint(item: indicator,
+                               attribute: .centerX,
+                               relatedBy: .equal,
+                               toItem: self,
+                               attribute: .centerX,
+                               multiplier: 1,
+                               constant: 0),
+            NSLayoutConstraint(item: indicator,
+                               attribute: .centerY,
+                               relatedBy: .equal,
+                               toItem: self,
+                               attribute: .centerY,
+                               multiplier: 1,
+                               constant: 0)
+            ])
         
         return indicator
     }

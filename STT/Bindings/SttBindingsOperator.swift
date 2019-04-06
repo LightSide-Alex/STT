@@ -51,6 +51,6 @@ public func => <TV: AnyObject>(left: SttBindingSet<TV>, right: UIButton) -> SttB
     return left.bind(right)
 }
 
-public func => <TV: AnyObject, T>(left: SttBindingSet<TV>, right: T.Type) -> SttGenericBindingContext<TV, T> {
+public func => <TV: AnyObject, T>(left: SttBindingSet<TV>, right: @escaping (TV, T) -> Void) -> SttGenericBindingContext<TV, T> {
     return left.bind(right)
 }

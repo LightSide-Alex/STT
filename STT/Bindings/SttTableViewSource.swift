@@ -69,7 +69,7 @@ open class SttTableViewSource<T: SttViewInjector>: NSObject, UITableViewDataSour
         _collection = collection
         _tableView.reloadData()
         disposables?.dispose()
-        disposables = _collection.observableObject.subscribe(onNext: { [weak self] (indexes, type) in
+        disposables = _collection.changes.subscribe(onNext: { [weak self] (indexes, type) in
             if self?.maxAnimationCount ?? 0 < indexes.count {
                 self?._tableView.reloadData()
             }

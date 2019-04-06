@@ -37,33 +37,29 @@ public class Dynamic<Element> {
     private var disposeBag = DisposeBag()
     private var element: Variable<Element>
     
+    /// Represent current value
     public var value: Element {
         get { return element.value }
-        set {
-            element.value = newValue
-        }
+        set { element.value = newValue }
     }
     
     public init(_ value: Element) {
         element = Variable<Element>(value)
     }
     
-    /// Subscribe on changes and read current value
-    public func bind(_ listener: @escaping Listener) {
-        element.asObservable()
-            .subscribe(onNext: listener)
-            .disposed(by: disposeBag)
+    /// Subscribe on changes and return current value
+    /// - Parameter listener: a closure which call every time when value changes
+    @discardableResult
+    public func bind(_ listener: @escaping Listener) -> Disposable {
         
-        // listener(element.value)
-    }
-    
-    /// Subscribe only on changes
-    public func addListener(_ listener: @escaping Listener) {
-        element.asObservable()
+        let disposable = element.asObservable()
             .subscribe(onNext: listener)
-            .disposed(by: disposeBag)
+        
+        disposeBag.insert(disposable)
+        return disposable
     }
     
+    /// dispose all subsribtion
     public func dispose() {
         disposeBag = DisposeBag()
     }

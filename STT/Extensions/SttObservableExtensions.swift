@@ -27,38 +27,7 @@
 import Foundation
 import RxSwift
 
-public extension PrimitiveSequence {
-    public func toEmptyObservable<T>(ofType _: T.Type) -> Observable<T> {
-        return self.asObservable().flatMap({ _ in Observable<T>.empty() })
-    }
-    public func toObservable() -> Observable<Bool> {
-        return Observable<Bool>.create({ (observer) -> Disposable in
-            self.asObservable().subscribe(onCompleted: {
-                observer.onNext(true)
-                observer.onCompleted()
-            })
-        })
-    }
-    public func inBackground() -> PrimitiveSequence<Trait, Element> {
-        return self.subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-    }
-    public func observeInUI() -> PrimitiveSequence<Trait, Element> {
-        return self.observeOn(MainScheduler.instance)
-    }
-}
-
 public extension Observable {
-    public func saveInDB(saveCallback: @escaping (_ saveCallback: Element) -> Completable) -> Observable<Element>
-    {
-        return self.map({ (element) -> Element in
-            _ = saveCallback(element).subscribe(onCompleted: {
-                SttLog.trace(message: "\(type(of: Element.self)) has been saved succefully in realm", key: "RepositoryExtension")
-            }, onError: { (error) in
-                SttLog.error(message: "\(type(of: Element.self)) could not save in db", key: "RepositoryExtension")
-            })
-            return element
-        })
-    }
     
     public func toBoolObservable() -> Observable<Bool> {
         return self.map({ _ in true })
