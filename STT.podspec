@@ -32,6 +32,11 @@ This project is inspaired by MvvmCross [MvvmCross](https://github.com/MvvmCross/
     sp.s.source_files = "STT/Validation/*.swift"
   end
 
+  # A wrapper above Keychain and UserDefault
+  s.subspec 'KeyValueStorage' do |sp|
+    sp.s.source_files = "STT/KeyValueStorage/*.swift"
+  end
+
   # A collection of usefull bindings
   s.subspec 'Binding' do |sp|
     sp.s.source_files = "STT/Bindings/*.swift"

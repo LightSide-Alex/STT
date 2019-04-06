@@ -415,8 +415,6 @@
 		50F0CA9D2239496B0034E1AA /* KeyValueStorage */ = {
 			isa = PBXGroup;
 			children = (
-				5016C3E722392C460080BD63 /* SttStorageType.swift */,
-				5016C3E822392C460080BD63 /* SttStorage.swift */,
 			);
 			name = KeyValueStorage;
 			sourceTree = "<group>";
@@ -582,6 +580,8 @@
 		7D9B37D72258CA8100AD41BD /* KeyValueStorage */ = {
 			isa = PBXGroup;
 			children = (
+				5016C3E722392C460080BD63 /* SttStorageType.swift */,
+				5016C3E822392C460080BD63 /* SttStorage.swift */,
 			);
 			path = KeyValueStorage;
 			sourceTree = "<group>";
