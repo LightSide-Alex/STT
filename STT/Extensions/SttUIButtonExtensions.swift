@@ -30,10 +30,10 @@ import UIKit
 public extension UIButton {
     
     public func setUnderlineTitle(title: String? = nil) {
-        self.setAttributedTitle(NSAttributedString(string: title ?? self.titleLabel!.text!, attributes: [
+        self.setAttributedTitle(NSAttributedString(string: title ?? self.title(for: .normal)!, attributes: [
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .foregroundColor: self.titleColor(for: .normal)!,
-            .font: UIFont(name: "HelveticaNeue-Medium", size: self.titleLabel!.font.pointSize)!
+            .font: self.titleLabel!.font
             ]), for: .normal)
     }
 }

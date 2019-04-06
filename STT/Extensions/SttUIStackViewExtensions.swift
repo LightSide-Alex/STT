@@ -2,7 +2,7 @@
 //  SttStackViewExtensions.swift
 //  STT
 //
-//  Created by Piter Standret on 10/26/18.
+//  Created by Peter Standret on 10/26/18.
 //  Copyright © 2019 Peter Standret <pstandret@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy

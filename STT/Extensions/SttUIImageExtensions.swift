@@ -119,11 +119,3 @@ public extension UIImage {
         })
     }
 }
-
-public extension Data {
-    public func fixAdnConvertToImage() -> UIImage {
-        return autoreleasepool { () -> UIImage in
-            return UIImage(data: UIImage(data: self)!.pngData()!)!.fixOrientation()!
-        }
-    }
-}

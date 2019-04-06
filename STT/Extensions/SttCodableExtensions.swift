@@ -28,7 +28,7 @@ import Foundation
 
 public extension Encodable {
     
-    public func getDictionary() -> [String:Any] {
+    public func getDictionary() -> [String: Any] {
         do {
             let encoder = JSONEncoder()
             encoder.dateEncodingStrategy = .iso8601
@@ -61,6 +61,7 @@ public extension Encodable {
             return String(data: json, encoding: .utf8)!
         }
         catch {
+            // TODO: replace to normal method!!
             return "\"\(self)\""
         }
     }

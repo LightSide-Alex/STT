@@ -2,7 +2,7 @@
 //  ArrayExtensions.swift
 //  STT
 //
-//  Created by Piter Standret on 6/3/18.
+//  Created by Peter Standret on 6/3/18.
 //  Copyright © 2019 Peter Standret <pstandret@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy

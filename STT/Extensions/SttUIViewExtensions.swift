@@ -29,6 +29,7 @@ import UIKit
 import TinyConstraints
 
 public extension UIView {
+    
     public func createCircle(dominateWidth: Bool = false, clipToBounds: Bool = true) {
         if dominateWidth {
             layer.cornerRadius = bounds.width / 2
@@ -73,6 +74,7 @@ public extension UIView {
     }
     
     public func setIndicator(style: UIActivityIndicatorView.Style = .gray, color: UIColor = UIColor.gray) -> UIActivityIndicatorView {
+        
         let indicator = UIActivityIndicatorView()
         indicator.style = style
         indicator.color = color
@@ -86,7 +88,8 @@ public extension UIView {
     public var safeTopAnchor: NSLayoutYAxisAnchor {
         if #available(iOS 11.0, *) {
             return self.safeAreaLayoutGuide.topAnchor
-        } else {
+        }
+        else {
             return self.topAnchor
         }
     }
@@ -94,7 +97,8 @@ public extension UIView {
     public var safeLeftAnchor: NSLayoutXAxisAnchor {
         if #available(iOS 11.0, *){
             return self.safeAreaLayoutGuide.leftAnchor
-        }else {
+        }
+        else {
             return self.leftAnchor
         }
     }
@@ -102,7 +106,8 @@ public extension UIView {
     public var safeRightAnchor: NSLayoutXAxisAnchor {
         if #available(iOS 11.0, *){
             return self.safeAreaLayoutGuide.rightAnchor
-        }else {
+        }
+        else {
             return self.rightAnchor
         }
     }
@@ -110,7 +115,8 @@ public extension UIView {
     public var safeBottomAnchor: NSLayoutYAxisAnchor {
         if #available(iOS 11.0, *) {
             return self.safeAreaLayoutGuide.bottomAnchor
-        } else {
+        }
+        else {
             return self.bottomAnchor
         }
     }

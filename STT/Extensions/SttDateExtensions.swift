@@ -2,7 +2,7 @@
 //  SttDateExtensions.swift
 //  STT
 //
-//  Created by Piter Standret on 6/22/18.
+//  Created by Peter Standret on 6/22/18.
 //  Edited by Alex Balan on 3/15/19
 //  Copyright © 2019 Peter Standret <pstandret@gmail.com>
 //
@@ -36,7 +36,7 @@ public extension Date {
         return Date(timeInterval: seconds, since: self)
     }
     
-    @available(*, deprecated, message: "Might cause integrity break of Date timezone in the app! Use DateFormatter instead.")
+    @available(*, unavailable, message: "This function cause integrity break of Date timezone in the app! Use DateFormatter instead.")
     // Convert UTC (or GMT) to local time
     public func toLocalTime() -> Date {
         let timezone = TimeZone.current

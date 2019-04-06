@@ -2,7 +2,7 @@
 //  SttUITextField.swift
 //  STT
 //
-//  Created by Piter Standret on 7/23/18.
+//  Created by Peter Standret on 7/23/18.
 //  Copyright © 2019 Peter Standret <pstandret@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,6 +28,7 @@ import UIKit
 
 public extension UITextField {
     public func setPlaceholderColor(color: UIColor) {
-        self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "nani", attributes: [NSAttributedString.Key.foregroundColor: color])
+        self.attributedPlaceholder = NSAttributedString(string: self.placeholder!,
+                                                        attributes: [.foregroundColor: color])
     }
 }

@@ -2,7 +2,7 @@
 //  SttUIPanGestureRecognizer.swift
 //  STT
 //
-//  Created by Piter Standret on 1/13/19.
+//  Created by Peter Standret on 1/13/19.
 //  Copyright © 2019 Peter Standret <pstandret@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy

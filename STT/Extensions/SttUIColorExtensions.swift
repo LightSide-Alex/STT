@@ -2,7 +2,7 @@
 //  SttUIColorExtensions.swift
 //  STT
 //
-//  Created by StartupSoft on 2/28/19.
+//  Created by Standret on 2/28/19.
 //  Copyright © 2019 Peter Standret <pstandret@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
